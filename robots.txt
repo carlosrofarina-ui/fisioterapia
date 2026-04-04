@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vivamaisfisioterapia.com.br/sitemap.xml
