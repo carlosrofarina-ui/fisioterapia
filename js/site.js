@@ -17,6 +17,21 @@
   addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  /* ── Botão de modo claro/escuro (lembra a escolha) ── */
+  const root = document.documentElement;
+  const themeBtn = $('#theme-tog');
+  const isDark = () => root.dataset.theme
+    ? root.dataset.theme === 'dark'
+    : matchMedia('(prefers-color-scheme: dark)').matches;
+  const syncTheme = () => themeBtn?.setAttribute('aria-label', isDark() ? 'Mudar para modo claro' : 'Mudar para modo escuro');
+  themeBtn?.addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncTheme();
+  });
+  syncTheme();
+
   /* ── Menu mobile em tela cheia ── */
   const menu = $('#mnav');
   const tog = $('#nav-tog');
