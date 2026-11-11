@@ -679,3 +679,10 @@ html.menu-open{overflow:hidden}
 .ih-fig .fig-name{display:none}
 .ih-fig .fig-info{min-height:0;width:max-content;max-width:86vw;justify-self:center}
 @media (max-width:859px){.ih-fig{max-width:140px;margin-inline:auto}}
+
+/* Entradas laterais não podem alargar a página antes de aparecerem */
+html{overflow-x:clip}
+@media (max-width:859px){
+  .js [data-a="l"],.js [data-a="r"]{transform:translateY(26px)}
+  .js [data-a].vis{transform:none}
+}
