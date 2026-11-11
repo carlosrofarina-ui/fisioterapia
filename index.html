@@ -208,7 +208,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>(function(d){d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')d.dataset.theme=t}catch(e){}})(document.documentElement)</script>
 <script src="js/site.js" defer></script>
 </head>
 <body>
@@ -237,6 +237,7 @@
       <a href="https://wa.me/5516992113219?text=Ol%C3%A1%20Christian%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20fisioterapia%20domiciliar%20em%20Ribeir%C3%A3o%20Preto." class="btn btn-wa btn-sm" target="_blank" rel="noopener noreferrer" aria-label="Agendar fisioterapia pelo WhatsApp">
         <svg class="ic" aria-hidden="true"><use href="img/icons.svg#whatsapp"/></svg><span>Agendar agora</span>
       </a>
+      <button class="theme-tog" id="theme-tog" type="button" aria-label="Alternar entre modo claro e escuro" title="Modo claro/escuro"><svg class="ic i-moon" aria-hidden="true"><use href="img/icons.svg#moon"/></svg><svg class="ic i-sun" aria-hidden="true"><use href="img/icons.svg#sun"/></svg></button>
       <button class="nav-tog" id="nav-tog" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav"><svg class="ic" aria-hidden="true"><use href="img/icons.svg#menu"/></svg></button>
     </div>
   </nav>
