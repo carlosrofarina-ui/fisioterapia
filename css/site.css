@@ -5,7 +5,7 @@
 
 /* ── TOKENS ── */
 :root{
-  color-scheme:light dark;
+  color-scheme:light;
   --bg:#ffffff;
   --surface:#f3f9f5;
   --card:#ffffff;
@@ -39,26 +39,6 @@
   --gut:clamp(16px,5vw,48px);
   --sec:clamp(64px,9vw,116px);
   --ease:cubic-bezier(.2,.7,.2,1);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#0a1611;
-    --surface:#0f1f18;
-    --card:#14271f;
-    --ink:#e6f1eb;
-    --muted:#9fb9ad;
-    --head:#f1f8f4;
-    --brand:#52B788;
-    --brand-hover:#74c69d;
-    --on-brand:#06281a;
-    --accent:#74c69d;
-    --tint:#193529;
-    --line:rgba(255,255,255,.1);
-    --glass:rgba(12,26,20,.74);
-    --sh-sm:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
-    --sh-md:0 2px 4px rgba(0,0,0,.3),0 14px 36px rgba(0,0,0,.35);
-    --sh-lg:0 4px 8px rgba(0,0,0,.3),0 28px 70px rgba(0,0,0,.45);
-  }
 }
 :root[data-theme="dark"]{
     --bg:#0a1611;
@@ -154,11 +134,6 @@ p{text-wrap:pretty}
 .theme-tog .i-sun{display:none}
 :root[data-theme="dark"] .theme-tog .i-sun{display:block}
 :root[data-theme="dark"] .theme-tog .i-moon{display:none}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) .theme-tog .i-sun{display:block}
-  :root:not([data-theme="light"]) .theme-tog .i-moon{display:none}
-}
-
 /* ── MENU MOBILE (tela cheia) ── */
 .mnav{position:fixed;inset:0;z-index:1100;display:flex;flex-direction:column;padding:16px var(--gut) calc(28px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility .3s}
 .mnav.open{opacity:1;visibility:visible}
@@ -673,7 +648,6 @@ html.menu-open{overflow:hidden}
   .about-img img,.hero-frame img{scale:1}
 }
 .step{z-index:1}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .b-hi,:root:not([data-theme="light"]) .b-hi-l{opacity:.12}}
 :root[data-theme="dark"] .b-hi,:root[data-theme="dark"] .b-hi-l{opacity:.12}
 .ih-fig{max-width:190px}
 .ih-fig .fig-name{display:none}

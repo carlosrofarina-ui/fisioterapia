@@ -12,10 +12,13 @@
 
   /* ── Botão de modo claro/escuro (lembra a escolha) ── */
   const themeBtn = $('#theme-tog');
-  const isDark = () => root.dataset.theme
-    ? root.dataset.theme === 'dark'
-    : matchMedia('(prefers-color-scheme: dark)').matches;
-  const syncTheme = () => themeBtn?.setAttribute('aria-label', isDark() ? 'Mudar para modo claro' : 'Mudar para modo escuro');
+  // o site abre sempre no modo claro; o escuro só vale se a pessoa escolher
+  const isDark = () => root.dataset.theme === 'dark';
+  const themeMeta = $('meta[name="theme-color"]');
+  const syncTheme = () => {
+    themeBtn?.setAttribute('aria-label', isDark() ? 'Mudar para modo claro' : 'Mudar para modo escuro');
+    themeMeta?.setAttribute('content', isDark() ? '#0a1611' : '#f3f9f5');
+  };
   themeBtn?.addEventListener('click', () => {
     const next = isDark() ? 'light' : 'dark';
     root.dataset.theme = next;
